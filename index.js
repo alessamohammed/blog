@@ -1,2 +1,0 @@
-document.getElementById('posts').innerHTML = '  <article class="blog-post"><h2 class="blog-post-title">New feature</h2><p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p><p></p></article>';
-document.write('hi')
