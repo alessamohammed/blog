@@ -9,6 +9,7 @@
 
       <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
       <link href="blog.css" rel="stylesheet">
+      <script src="index.js"></script>
     </head>
     <body>
       
@@ -53,18 +54,26 @@
         <h3 class="pb-4 mb-4 fst-italic border-bottom">
           Posts
         </h3>
-  
+        <div name="posts" id="posts">
         <article class="blog-post">
           <h2 class="blog-post-title">Sample blog post</h2>
-          <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
+          <p class="blog-post-meta"><a href="#">Mohammed</a></p>
           <p></p>
           </article>
-  
-        <article class="blog-post">
-          <h2 class="blog-post-title">New feature</h2>
-          <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
-          <p></p>
-        </article>
+          <script>
+             if(!(localStorage.getItem("blogs") === null))
+             {
+                var storedblogs = JSON.parse(localStorage.getItem("blogs"));
+                 for(i=0;i<storedblogs.length;i++)
+                 {
+                    document.getElementById('posts').innerHTML=document.getElementById('posts').innerHTML+'<article class="blog-post"><h2 class="blog-post-title">'+storedblogs[i][1]+'</h2><p class="blog-post-meta"><a href="#">'+storedblogs[i][0]+'</a></p><p>'+storedblogs[i][2]+'</p></article>';
+                 }
+             }
+          
+      //    document.getElementById('posts').innerHTML = '<article class="blog-post"><h2 class="blog-post-title">New feature</h2><p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p><p></p></article>';
+       </script>
+        </div>
+      
   
         <nav class="blog-pagination" aria-label="Pagination">
           <a class="btn btn-outline-primary" href="#">Older</a>
